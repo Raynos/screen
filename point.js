@@ -21,8 +21,13 @@ function point(position) {
             return update(self)
         }
 
-        self.x = update.x
-        self.y = update.y
+        if (update.x) {
+            self.x = update.x
+        }
+
+        if (update.y) {
+            self.y = update.y
+        }
 
         self.emit("change")
     }
