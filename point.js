@@ -3,26 +3,26 @@ var EventEmitter = require("events").EventEmitter
 
 module.exports = point
 
-function point(state) {
-    if (state) {
-        self.x = state.x
-        self.y = state.y
+function point(position) {
+    if (position) {
+        self.x = position.x
+        self.y = position.y
     }
 
     extend(self, EventEmitter.prototype)
 
     return self
 
-    function self(state) {
-        if (typeof state === "function") {
+    function self(update) {
+        if (typeof update === "function") {
             self.on("change", function () {
-                state(self)
+                update(self)
             })
-            return state(self)
+            return update(self)
         }
 
-        self.x = state.x
-        self.y = state.y
+        self.x = update.x
+        self.y = update.y
 
         self.emit("change")
     }
