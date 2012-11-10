@@ -1,6 +1,6 @@
 {
   "name": "screen",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create a screen to track relative positions",
   "keywords": [],
   "author": "Raynos <raynos2@gmail.com>",
@@ -19,8 +19,7 @@
   "dependencies": {
     "xtend": "~1.0.3"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "licenses": [
     {
       "type": "MIT",
