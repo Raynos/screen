@@ -18,6 +18,8 @@ function screen(center, width, height) {
     var s = new EventEmitter()
     s.list = list
     s.center = center
+    s.width = width
+    s.height = height
     s.add = add
     return s
 
