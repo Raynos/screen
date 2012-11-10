@@ -42,7 +42,11 @@ function screen(center, width, height) {
         relative.y = absolute.y - center.y + (height / 2)
         relative.emit("change")
 
-        if (0 < relative.x < width && 0 < relative.y < height) {
+        if (0 < relative.x &&
+            relative.x < width &&
+            0 < relative.y &&
+            relative.y < height
+        ) {
             relative.emit("visible")
             relative.state = "visible"
         } else {
