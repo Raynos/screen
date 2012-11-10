@@ -23,6 +23,11 @@ function point(position) {
             self.on("change", function () {
                 valid(self) && update(self)
             })
+
+            if (self.state) {
+                self.emit(self.state)
+            }
+
             return valid(self) && update(self)
         }
 

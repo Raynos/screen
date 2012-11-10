@@ -37,5 +37,13 @@ function screen(center, width, height) {
         relative.x = absolute.x - center.x + (width / 2)
         relative.y = absolute.y - center.y + (height / 2)
         relative.emit("change")
+
+        if (0 < relative.x < width && 0 < relative.y < height) {
+            relative.emit("visible")
+            relative.state = "visible"
+        } else {
+            relative.emit("offscreen")
+            relative.state = "offscreen"
+        }
     }
 }
