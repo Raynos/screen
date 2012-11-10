@@ -16,6 +16,8 @@ function screen(center, width, height) {
     })
 
     var s = new EventEmitter()
+    s.list = list
+    s.center = center
     s.add = add
     return s
 
