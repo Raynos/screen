@@ -20,15 +20,14 @@ function point(position) {
 
     function self(update) {
         if (typeof update === "function") {
-            self.on("change", function () {
-                valid(self) && update(self)
-            })
+            self.on("change", listener)
 
             if (self.state) {
                 self.emit(self.state)
             }
 
-            return valid(self) && update(self)
+            valid(self) && update(self)
+            return cleanup
         }
 
         if (typeof update.x === "number") {
@@ -40,6 +39,14 @@ function point(position) {
         }
 
         self.emit("change")
+
+        function listener() {
+            valid(self) && update(self)
+        }
+
+        function cleanup() {
+            self.removeListener("change", listener)
+        }
     }
 }
 
