@@ -21,9 +21,9 @@ function point(position) {
     function self(update) {
         if (typeof update === "function") {
             self.on("change", function () {
-                update(self)
+                valid(self) && update(self)
             })
-            return update(self)
+            return valid(self) && update(self)
         }
 
         if (typeof update.x === "number") {
@@ -35,5 +35,14 @@ function point(position) {
         }
 
         self.emit("change")
+    }
+}
+
+function valid(point) {
+    if (typeof point.x === "number" &&
+        typeof point.y === "number" &&
+        !isNaN(point.x) && !isNaN(point.y)
+    ) {
+        return true
     }
 }

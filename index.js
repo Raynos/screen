@@ -36,10 +36,6 @@ function screen(center, width, height) {
     function calculate(relative, absolute) {
         relative.x = absolute.x - center.x + (width / 2)
         relative.y = absolute.y - center.y + (height / 2)
-        if (typeof relative.x === "number" &&
-            typeof relative.y === "number"
-        ) {
-            relative.emit("change")
-        }
+        relative.emit("change")
     }
 }
