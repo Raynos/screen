@@ -5,11 +5,11 @@ module.exports = point
 
 function point(position) {
     if (position) {
-        if (position.x) {
+        if (typeof position.x === "number") {
             self.x = position.x
         }
 
-        if (position.y) {
+        if (typeof position.y === "number") {
             self.y = position.y
         }
     }
@@ -26,11 +26,11 @@ function point(position) {
             return update(self)
         }
 
-        if (update.x) {
+        if (typeof update.x === "number") {
             self.x = update.x
         }
 
-        if (update.y) {
+        if (typeof update.y === "number") {
             self.y = update.y
         }
 
