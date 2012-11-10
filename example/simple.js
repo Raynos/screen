@@ -1,7 +1,5 @@
 /*global screen:true*/
-var EventEmitter = require("events").EventEmitter
-
-    , screen = require("../index")
+var screen = require("../index")
     , point = require("../point")
 
     , center = point({ x: 10, y: 10 })
