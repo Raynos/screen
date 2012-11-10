@@ -5,8 +5,13 @@ module.exports = point
 
 function point(position) {
     if (position) {
-        self.x = position.x
-        self.y = position.y
+        if (position.x) {
+            self.x = position.x
+        }
+
+        if (position.y) {
+            self.y = position.y
+        }
     }
 
     extend(self, EventEmitter.prototype)
