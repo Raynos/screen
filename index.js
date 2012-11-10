@@ -15,9 +15,9 @@ function screen(center, width, height) {
         })
     })
 
-    return {
-        add: add
-    }
+    var s = new EventEmitter()
+    s.add = add
+    return s
 
     function add(absolute) {
         var relative = point()
